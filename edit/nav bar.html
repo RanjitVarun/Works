@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="tab.css">
+
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 86px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:crimson;
+  color: black;
+}
+
+.zoom {
+ 
+  
+  transition: transform .2s; 
+  width: 30;
+  height: 15;
+  margin: 0 auto;
+  float: left;
+}
+
+.zoom:hover {
+  transform: scale(1.25); 
+}
+
+.zoomicon {
+ 
+  
+ transition: transform .2s; 
+ width: 30;
+ height: 15;
+ margin: 0 auto;
+ float: left;
+}
+
+.zoomicon:hover {
+ transform: scale(1.25); 
+}
+.row {
+  display: flex;
+}
+
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+        <div class="zoom">
+        <a href="#logo"><img src="film-reel.png" width="20" height="15" > Explore Movies</a>
+         </div>
+  <a  href="index2.html">Home</a>
+  <a href="https://www.imdb.com/">IMDB</a>
+  <a onclick="getLocation()">Movies Near you</a>
+  <a href="index.html">Logout</a>
+</div>
+
+<div style="padding-left:16px">
+  <h2>Top 5 movies</h2>
+ 
+</div>
+<div class="row">
+       
+        <div class="column">
+                <div class="zoomicon" > 
+          <img src="xmen.jpg"  style="width:80%"  >
+          <p align="left" style="color:royalblue;">Xmen Dark phoenix </p>
+                </div>
+        </div>
+        <div class="column">
+                <div class="zoomicon"> 
+          <img src="pet.jpg"  style="width:52%">
+          <p align="left"  style="color:royalblue;">The Secret of Pets 2 </p>
+        </div>
+        </div>
+        <div class="column">
+                <div class="zoomicon"> 
+          <img src="johnwick.jpg"  style="width:80%">
+          <p align="left"  style="color:royalblue;">John Wick 3 </p>
+        </div>
+        </div>
+        <div class="column">
+                <div class="zoomicon">
+                <img src="godzilla.jpg"  style="width:57%">
+                <p align="left"  style="color:royalblue;">Godzilla </p>
+              </div>
+        </div>
+      <div class="column">
+            <div class="zoomicon"> 
+     <img src="photograph.jpg" style=" width:83%">
+     <p align="left"  style="color:royalblue;">Photograph </p>
+    </div>
+    </div>
+    
+      </div>
+
+    <h2>Add to favorites</h2>
+    
+<table>
+    <tr>
+<td>
+<form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+        <div> <label>Movie Name*</label><label class="validation-error hide" id="fullNameValidationError"></label> <input type="text" name="movieName" id="name"> </div>
+
+<div>
+        <label>Rating</label>
+        <input type="number" name="rating" id="rating">
+        </div>
+        <div>
+                <label>year</label>
+                <input type="number" name="year" id="year">
+                </div>
+                <div class="form-action-buttons"> <input type="submit" value="Add">
+                 </div>
+
+
+
+</form>
+
+</td>
+<td>
+<table class="list" id="movielist">
+<thead>
+<tr>
+<th>Movie Name</th>
+<th>Rating</th>
+<th>Year</th>
+</tr>
+</thead>
+<tbody>
+
+</tbody>
+
+
+
+
+
+</table>
+
+
+
+
+</td>
+
+
+    </tr>
+</table>
+<script src="tab.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+(function() {
+	    var MusicBox = function() {
+	        var self = {};
+	        var albums = [];
+	        self.addAlbum = function( a ) {
+	            albums.push( a );
+	        };
+	        self.favoriteAlbum = function() {
+	            return albums.reduce(function(a, b) {
+	                return a.countPlays() > b.countPlays() ? a : b;
+	            });
+	        };
+	        return self;
+	    };
+	    var Album = function(artist, title) {
+	        var self = {};
+	        var count = 0;
+	        self.play = function() {
+	            console.log("Playing " + self);
+	            count += 1;
+	        };
+	        self.toString = function() {
+	            return artist + " - " + title;
+	        };
+	        self.countPlays = function() {
+	            return count;
+	        };
+	        return self;
+	    };
+	    var box = new MusicBox(),
+	        a1 = new Album("The Who", "Tommy"),
+	        a2 = new Album("Tom Waits", "Closing Time"),
+	        a3 = new Album("John Cale", "Paris 1919"),
+	        favorite;
+	    box.addAlbum(a1);
+	    box.addAlbum(a2);
+	    box.addAlbum(a3);
+	    a1.play() ; 
+	    a2.play(); 
+	    a1.play(); 
+	    favorite = box.favoriteAlbum();
+	    console.log("favorite album is " + favorite);
+	}())
+</script>
+	</body>
+	</html>

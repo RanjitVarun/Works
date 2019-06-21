@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+body{
+    margin: 0;
+    padding: 0;
+    background: url(86373.jpg)
+}
+.loginbox
+{
+    width: 320px;
+    height: 420px;
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+    top: 50%;
+    left:50%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position:absolute;
+    top:-50px;
+    left:calc(50% - 50px);
+}
+h1{
+    margin: 0;
+    padding:0 0 20px;
+    text-align:center;
+    font-size: 22px;
+
+}
+.loginbox input[type="option"]{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.button{
+    position:absolute; 
+    top:10px; 
+    right:20px;
+}
+
+
+
+
+
+        </style>
+</head>
+<body>
+        <div class="button">
+                <input type="button" value="logout" onclick="logout()" >
+                </div>
+<div class="loginbox">
+<img class="pic" src="download.png">
+        <h4>Enter url to explore</h4>
+        <input type="url" name="url" id="url" placeholder="https://example.com" required>
+        <input type="email" id="email" placeholder="example@gmail.com" required multiple>
+        <h4>Click below links to explore</h4>
+        <input type="button" value="explore science" onclick="explorescience()">
+        <input type="button" value="explore world" onclick="exploreworld()">
+        <input type="button" value="explore tamil" onclick="exploretamil()">
+        <input type="button" value="explore movies" onclick="exploremovies()">
+        
+        
+        
+        
+        
+        
+    
+    </div>
+    <script>
+    function explorescience()
+    {
+        window.location.assign("3form.html")
+    }
+    function exploreworld()
+    {
+        window.location.assign("3form world.html")
+    }
+    function exploretamil()
+    {
+        window.location.assign("tamil.html")
+    }
+    function exploremovies()
+    {
+        window.location.assign("nav bar.html")
+    }
+    
+    
+    function logout()
+            {
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            localStorage.removeItem("age");
+            localStorage.removeItem("mobile");
+            sessionStorage.removeItem("name");
+            window.location.assign("index.html")
+            }
+
+    
+    
+    
+    
+    
+    </script>
+   
+    
+   
+
+
+
+
+
+</body>

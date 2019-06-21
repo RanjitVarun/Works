@@ -1,0 +1,194 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset0 Liberation Sans{\*\falt Arial};}{\f5\froman\fprq2\fcharset0 Times New Roman;}{\f6\fnil\fprq2\fcharset0 Noto Sans CJK SC Regular;}{\f7\fnil\fprq2\fcharset0 FreeSans;}{\f8\fswiss\fprq0\fcharset128 FreeSans;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet{\s0\snext0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393 Normal;}
+{\s15\sbasedon0\snext16\sb240\sa120\keepn\dbch\af6\dbch\af7\afs28\loch\f4\fs28 Heading;}
+{\s16\sbasedon0\snext16\sl288\slmult1\sb0\sa140 Text Body;}
+{\s17\sbasedon16\snext17\sl288\slmult1\sb0\sa140\dbch\af8 List;}
+{\s18\sbasedon0\snext18\sb120\sa120\noline\i\dbch\af8\afs24\ai\fs24 Caption;}
+{\s19\sbasedon0\snext19\noline\dbch\af8 Index;}
+}{\*\generator LibreOffice/5.1.6.2$Linux_X86_64 LibreOffice_project/10m0$Build-2}{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr2019\mo6\dy12\hr9\min1}{\printim\yr0\mo0\dy0\hr0\min0}}\deftab720
+\viewscale100
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse451\pgwsxn12240\pghsxn15840\marglsxn1800\margrsxn1800\margtsxn1440\margbsxn1440\pgdscnxt0 Default Style;}}
+\formshade{\*\pgdscno0}\paperh15840\paperw12240\margl1800\margr1800\margt1440\margb1440\sectd\sbknone\sectunlocked1\pgndec\pgwsxn12240\pghsxn15840\marglsxn1800\margrsxn1800\margtsxn1440\margbsxn1440\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+{\*\ftnsep}\pgndec\pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b\rtlch \ltrch\loch\fs28\lang9\loch\f5
+MYSQL STORAGE ENGINE TYPES}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+          }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Storage engines (underlying software component) are MySQL components, that can handle the SQL operations for different table types to store and manage information in a database. InnoDB is mostly used general-purpose storage engine and as of MySQL 5.5 and later it is the default engine. There are many storage engines available in MySQL and they are used for different purposes.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+In CREATE TABLE STATEMENT you can add ENGINE table option to mention a storage engine. See the following CREATE TABLE statements, where different engines have used :}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+CREATE TABLE t1 (i INT) ENGINE = INNODB;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+CREATE TABLE t2 (i INT) ENGINE = CSV;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+CREATE TABLE t3 (i INT) ENGINE = MEMORY;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+You can set the default storage engine for the current session by setting the default_storage_engine variable using set command.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+SET default_storage_engine=ARCHIVE;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+If you want to convert a table form one storage engine to another, use an ALTER TABLE statement. See the following statement :}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+ALTER TABLE table1 ENGINE = InnoDB;}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b\rtlch \ltrch\loch\fs28\lang9\loch\f5
+InnoDB}{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+\tab }
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+          }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+This is the default storage engine for MySQL 5.5 and higher. It provides transaction-safe (ACID compliant) tables, supports FOREIGN KEY referential-integrity constraints. It supports commit, rollback, and crash-recovery capabilities to protect data. It also support row-level locking. It's "consistent nonlocking reads" increases performance when used in a multiuser environment. It stores data in clustered indexes which reduces I/O for queries based on primary keys.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+InnoDB has maximum performance when processing large data volumes.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Its DML operations (add, update and delete data) is ACID (atomic, consistent, isolated and durable) model compatible, with transactions featuring commit, rollback, and crash-recovery capabilities to protect user data.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Row-level locking (locks are placed on single records (rows)) system increase multi-user concurrency and performance. All InnoDB locks held by a transaction are released when the transaction is committed or aborted.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+InnoDB tables arrange your data on disk to optimize queries based on primary keys.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+InnoDB supports FOREIGN KEY constraints to maintain data integrity. Therefore inserts, updates, and deletes are all checked to ensure they do not result in inconsistencies across different tables.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+It is possible to mix InnoDB tables with tables from other MySQL storage engines within the same statement. For example, you can use a join operation to combine data from InnoDB and MEMORY tables in a single query.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Maximum 1017 columns are allowed in a table .}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Maximum 64 secondary indexes are allowed in a table. Secondary indexes is a type of InnoDB index that represents a subset of table columns.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+By default, an index key for a single-column index can be up to 767 bytes. The same length limit applies to any index key prefix.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The InnoDB internal maximum key length is 3500 bytes, but MySQL itself restricts this to 3072 bytes (combined index key in a multi-column index).}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The maximum row length except for variable-length columns (VARBINARY, VARCHAR, BLOB and TEXT), is about 8000 bytes for the default page size of 16KB.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Internally InnoDB supports row sizes larger than 65,535 bytes, but MySQL itself imposes a row-size limit of 65,535 for the combined size of all columns.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The maximum table space size is four billion database pages (64TB) and the minimum table space size is slightly larger than 10MB.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b\rtlch \ltrch\loch\fs28\lang9\loch\f5
+MyISAM}{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+\tab }
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+          }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+This storage engine, manages non transactional tables, provides high-speed storage and retrieval, supports full text searching.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Each MyISAM table is stored on disk in three files.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+         }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+An .frm file stores the table format.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+         }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The data file has an .MYD (MYData) extension.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+         }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The index file has an .MYI (MYIndex) extension.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Up to 63-bit file length large files are supported on file systems and operating systems that support large files.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Maximum 64 number of indexes and 16 number of columns per index are allowed.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The maximum key length is 1000 bytes.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Internal handling of one AUTO_INCREMENT column per table is supported.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+You can put the data file and index file in different directories on different physical devices to get more speed with the DATA DIRECTORY and INDEX DIRECTORY table options to CREATE TABLE}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+BLOB and TEXT columns can be indexed.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+NULL values are permitted in indexed columns. This takes 0 to 1 bytes per key.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Each character column can have a different character set.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Support for a true VARCHAR type; a VARCHAR column starts with a length stored in one or two bytes.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Tables with VARCHAR columns may have fixed or dynamic row length.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The sum of the lengths of the VARCHAR and CHAR columns in a table may be up to 64KB.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Arbitrary length UNIQUE constraints.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b\rtlch \ltrch\loch\fs28\lang9\loch\f5
+MEMORY}{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+\tab }
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+          }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Provides in-memory tables, formerly known as HEAP. It sores all data in RAM for faster access than storing data on disks. Useful for quick looks up of reference and other identical data.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The MEMORY storage engine creates tables that are stored in memory. Because the data can be crashed due to hardware or power issues, you can only use these tables as temporary work areas or read-only caches for data pulled from other tables. When the MySQL server halts or restarts, the data in MEMORY tables is lost.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Operations involving transient, non-critical data such as session management or caching.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+In-memory storage for fast access and low latency. Data volume can fit entirely in memory without causing the operating system to swap out virtual memory pages.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+By default, an index key for a single-column index can be up to 767 bytes. The same length limit applies to any index key prefix.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The InnoDB internal maximum key length is 3500 bytes, but MySQL itself restricts this to 3072 bytes (combined index key in a multi-column index).}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The maximum row length except for variable-length columns (VARBINARY, VARCHAR, BLOB and TEXT), is about 8000 bytes for the default page size of 16KB.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Internally InnoDB supports row sizes larger than 65,535 bytes, but MySQL itself imposes a row-size limit of 65,535 for the combined size of all columns.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The maximum tablespace size is four billion database pages (64TB) and the minimum tablespace size is slightly larger than 10MB.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b\rtlch \ltrch\loch\fs28\lang9\loch\f5
+MERGE}{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+\tab }
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+          }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Groups more than one similar MyISAM tables to be treated as a single table, can handle non transactional tables, included by default.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The MERGE storage engine (also known as MRG_MyISAM) is a collection of identical MyISAM tables (identical column and index information with same order) that can be used as single table. You must have SELECT, DELETE, and UPDATE privileges on the MyISAM tables that you map to a MERGE table.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b\rtlch \ltrch\loch\fs28\lang9\loch\f5
+EXAMPLE}{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+\tab }
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+          }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+You can create tables with this engine, but can not store or fetch data. Purpose of this is to teach developers about how to write a new storage engine.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The EXAMPLE storage engine is a stub engine that does nothing and serve as an example in the MySQL source code that clarify how to begin writing new storage engines. To examine the source for the EXAMPLE engine, look in the storage/example directory of a MySQL source distribution. When you create an EXAMPLE table :}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The server creates a table format file (.frm extension) in the database    directory.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+No other files are created}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+No data can be stored into the table.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Retrievals return an empty result.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Does not support indexing.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b\rtlch \ltrch\loch\fs28\lang9\loch\f5
+ARCHIVE}{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+\tab }
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+          }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+Used to store a large amount of data, does not support indexes.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+The ARCHIVE storage engine is used to store large amounts of unindexed data in a very small footprint. The storage engine is included in MySQL binary distributions. To enable this storage engine (if you build MySQL from source), invoke CMake with the DWITH_ARCHIVE_STORAGE_ENGINE option. When you create an ARCHIVE table, the server creates a table format file (.frm extension) in the database directory.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+It supports ,}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+    }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+INSERT and SELECT.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+    }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+ORDER BY operations}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+    }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+BLOB columns}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+    }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+AUTO_INCREMENT column attribute. The AUTO_INCREMENT column can have either a unique or nonunique index.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200{\b0\rtlch \ltrch\fs28\lang9\loch\f5
+    }{\b0\rtlch \ltrch\loch\fs28\lang9\loch\f5
+AUTO_INCREMENT table option in CREATE TABLE statements.}
+\par \pard\plain \s0\nowidctlpar\hyphpar0\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang16393\sl276\slmult1\sb0\sa200\rtlch \ltrch\loch
+
+\par }

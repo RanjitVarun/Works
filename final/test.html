@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>explore movies</title>
+<link rel="stylesheet"  href="enter.css">
+<style>
+.button{
+  position:absolute; 
+  top:0; 
+ right:0;
+    }
+    .center {
+  text-align: center;
+  
+    }
+  
+  .bottom {
+  text-align: right;
+ 
+}
+</style>    
+</head>
+<body>
+    
+
+
+<h2>Explore movies</h2><br>
+<div class="button">
+<input type="button" value="logout" onclick="logout()">
+</div>
+
+    <div  id="movie1">
+    <div><label>Name:</label> secret life of pets 2</div><br>
+    <div><label>Rating:</label>7.9</div><br>
+    <div><label>year:</label>2019</div><br>
+    <div><a href="https://www.rogerebert.com/reviews/the-secret-life-of-pets-2-2019">More...</a></div><br>
+  </div>
+
+  
+    <div id = "movie2">
+    <div><label>Name:</label>Dark phoenix</div><br>
+    <div><label>Rating:</label>8.3</div><br>
+    <div><label>year:</label>2019</div><br>
+    <div><a href="https://www.rogerebert.com/reviews/dark-phoenix-2019">More...</a></div><br>  
+    </div>
+
+    <div id = "movie3">
+        <div><label>Name:</label>Superman</div><br>
+        <div><label>Rating:</label>8.9</div><br>
+        <div><label>year:</label>1978</div><br>
+        <div><a href="https://www.rogerebert.com/reviews/great-movie-superman-1978">More...</a></div><br>
+            
+        </div>
+
+
+                        <tr>
+                           <td>
+                              <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                                 <div> <label>Movie Name*</label><label class="validation-error hide" id="fullNameValidationError"></label> <input type="text" name="fullName" id="fullName"> </div>
+                                 <div> <label>rating</label> <input type="text" name="empCode" id="empCode"> </div>
+                                 <div> <label>year</label> <input type="text" name="salary" id="salary"> </div>
+                                 <div class="form-action-buttons"> <input type="submit" value="Submit"> </div>
+                              </form>
+                           </td>
+                           </tr>
+                           </table>
+                           <table class="list" id="employeeList">
+                                        <thead>
+                                           <tr>
+                                              <th>Movie name</th>
+                                              <th>rating</th>
+                                              <th>year</th>
+                                             
+                                           </tr>
+                                        </thead>
+                                        <tbody> </tbody>
+                                     </table> 
+                                </table> 
+                       
+
+
+
+<script>
+        var selectedRow = null
+function onFormSubmit() {
+	if (validate()) {
+		var formData = readFormData();
+		if (selectedRow == null) insertNewRecord(formData);
+		else updateRecord(formData);
+		resetForm();
+	}
+}
+
+function readFormData() {
+	var formData = {};
+	formData["fullName"] = document.getElementById("fullName").value;
+	formData["empCode"] = document.getElementById("empCode").value;
+	formData["salary"] = document.getElementById("salary").value;
+	formData["city"] = document.getElementById("city").value;
+	return formData;
+}
+
+function insertNewRecord(data) {
+	var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
+	var newRow = table.insertRow(table.length);
+	cell1 = newRow.insertCell(0);
+	cell1.innerHTML = data.fullName;
+	cell2 = newRow.insertCell(1);
+	cell2.innerHTML = data.empCode;
+	cell3 = newRow.insertCell(2);
+	cell3.innerHTML = data.salary;
+	cell4 = newRow.insertCell(3);
+	cell4.innerHTML = data.city;
+	cell4 = newRow.insertCell(4);
+	cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a> <a onClick="onDelete(this)">Delete</a>`;
+}
+
+function resetForm() {
+	document.getElementById("fullName").value = "";
+	document.getElementById("empCode").value = "";
+	document.getElementById("salary").value = "";
+	document.getElementById("city").value = "";
+	selectedRow = null;
+}
+
+function onEdit(td) {
+	selectedRow = td.parentElement.parentElement;
+	document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
+	document.getElementById("empCode").value = selectedRow.cells[1].innerHTML;
+	document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
+	document.getElementById("city").value = selectedRow.cells[3].innerHTML;
+}
+
+function updateRecord(formData) {
+	selectedRow.cells[0].innerHTML = formData.fullName;
+	selectedRow.cells[1].innerHTML = formData.empCode;
+	selectedRow.cells[2].innerHTML = formData.salary;
+	selectedRow.cells[3].innerHTML = formData.city;
+}
+
+function onDelete(td) {
+	if (confirm('Are you sure to delete this record ?')) {
+		row = td.parentElement.parentElement;
+		document.getElementById("employeeList").deleteRow(row.rowIndex);
+		resetForm();
+	}
+}
+
+function validate() {
+	isValid = true;
+	if (document.getElementById("fullName").value == "") {
+		isValid = false;
+		document.getElementById("fullNameValidationError").classList.remove("hide");
+	} else {
+		isValid = true;
+		if (!document.getElementById("fullNameValidationError").classList.contains("hide")) document.getElementById("fullNameValidationError").classList.add("hide");
+	}
+	return isValid;
+}
+
+
+    function logout()
+            {
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            localStorage.removeItem("age");
+            localStorage.removeItem("mobile");
+            sessionStorage.removeItem("name");
+            window.location.assign("index.html")
+            }
+           
+</script>
+
+
+
+
+</body>
+</html>
