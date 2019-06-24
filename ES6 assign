@@ -1,0 +1,127 @@
+Solve the below programs and send them by the end of this week. Reach out to me if you need any clarifications.
+
+
+a = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+b = [{name: "abc", age: 21},
+{name: "abc", age: 21},
+{name: "xyz: 22},
+{name: "asd", age: 23},
+{name: "das", age: 21},
+{name: "xyza", age: 22},
+{name: "abc", age: 22}
+]
+
+For array 'a':
+1. Get the elements that are divisible by the input number passed.
+2. Get the elements that are obtained by powers of 2 and replace 'true' in that place in the array (Example output: [true, true, 3, true, 5, 6,7, true, ..so-on...])
+3. Get the squares of all the elements
+
+For array 'b':
+1. Filter the names with age 21 (You can pass any age and have to filter the names)
+2. Get the objects that have a common name
+3. Get the objects that have partial name matches (Example: Pass 'xyz' and the output should contain the objects with name 'xyz' and 'xyza')
+
+
+
+1.
+
+var a = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+var no=prompt("enter the no");
+var filterarray = a.filter((a)=> {
+  return ((a%no)==0);
+});
+console.log(filterarray);
+
+2.
+
+var a=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+var i,j=0;
+for (i = 0; i < a.length; i++) {
+if(Math.pow(2,j) == a[i])
+{
+a[i]=true;
+j++;
+}
+}
+console.log(a);
+
+
+
+
+3.
+
+var a = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+var array=a.map((square)=> square*square);
+console.log(array);
+
+
+
+1.
+
+b = [{name: "abc", age: 21},
+{name: "abc", age: 21},
+{name: "xyz", age: 22},
+{name: "asd", age: 23},
+{name: "das", age: 21},
+{name: "xyza", age: 22},
+{name: "abc", age: 22}
+];
+var u=prompt("enter the age");
+var x =  b.filter(function(y) {
+    return y.age>u;
+});
+console.log(x);
+
+
+
+2.
+
+b = [{name: "abc", age: 21},
+{name: "abc", age: 21},
+{name: "xyz", age: 22},
+{name: "asd", age: 23},
+{name: "das", age: 21},
+{name: "xyza", age: 22},
+{name: "abc", age: 22}
+];
+var x =  b.filter(function(y) {
+    return y.name=="abc";
+});
+console.log(x);
+
+
+
+3.
+
+b = [{name: "abc", age: 21},
+{name: "abc", age: 21},
+{name: "xyz",age: 22},
+{name: "asd", age: 23},
+{name: "das", age: 21},
+{name: "xyza", age: 22},
+{name: "abc", age: 22}
+]
+function name(x){
+let names=[];
+for(let i=0;i<x.length;i++){
+names.push(x[i].name);
+}
+return names;
+}
+var array=name(b);
+
+
+function filterItems(arr, query) {
+  return arr.filter(function(x) {
+      return x.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  })
+}
+
+console.log(filterItems(array, 'xyz')); 
+
+
+
+
+
+
+
