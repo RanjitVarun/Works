@@ -1,0 +1,145 @@
+import React from 'react';
+import ReactDOM from 'react-dom'
+import logo, { ReactComponent } from './logo.svg';
+import './App.css';
+
+/*class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);*/
+
+/*class App extends React.Component {
+  constructor(props) {
+     super(props);
+     
+     this.state = {
+        name: 'ranjit'
+     }
+     this.updateState = this.updateState.bind(this);
+  };
+  updateState() {
+    if(this.state.name=='varun')
+    {
+      this.setState({name:"ranjit"});
+    }
+    else
+    {
+
+     this.setState({name: 'varun'})
+  }
+}
+  render() {
+     return (
+        <div>
+           <button onClick = {this.updateState}>CLICK</button>
+           <h4>{this.state.name}</h4>
+        </div>
+     );
+  }
+}*/
+
+
+/*class App extends React.Component {
+  constructor(props) {
+     super(props);
+     
+     this.state = {
+        name: 'ranjit'
+     }
+     this.updateState = this.updateState.bind(this);
+  };
+  updateState() {
+    if(this.state.name=='varun')
+    {
+      this.setState({name:"ranjit"});
+    }
+    else
+    {
+
+     this.setState({name: 'varun'})
+  }
+}
+  render() {
+     return (
+        <div>
+          <child changename={this.state.name}
+          updatestateprop={this.updateState}>
+
+          </child>
+           
+        </div>
+     );
+  }
+}
+class child extends React.Component
+{
+render()
+{
+  return(
+    <div>
+
+<button onClick={this.props.updatestateprop}>click</button>
+<h4>{this.props.changename}</h4>
+</div>
+  );
+}
+}*/
+
+class Handle extends React.Component{
+
+  constructor(){
+    super();
+    this.loginclick=this.loginclick.bind(this);
+    this.logoutclick=this.logoutclick.bind(this);
+    this.state={log:false};
+  }
+  loginclick()
+  {
+    this.setState({log: true});
+  }
+  logoutclick()
+  {
+    this.setState({log: false});
+  }
+render()
+{
+  const log = this.state.log;
+  let button;
+  if (log) {
+    button = <LogoutButton onClick={this.logoutClick} />;
+  } else {
+    button = <LoginButton onClick={this.loginClick} />;
+  }
+
+  return (
+    <div>
+  
+      {button}
+    </div>
+  );
+}
+}
+
+ReactDOM.render(
+  <Handle/>,
+  document.getElementById('root')
+);
+
+
+export default Handle;
