@@ -1,0 +1,73 @@
+const createPolicy=(name,amount)=>{
+return {
+type:'createpolicy',
+payload:{
+name:name,
+amount:amount
+}
+
+};
+};
+
+
+const deletePolicy=(name)=>{
+return {
+type: 'delete policy',
+payload:{
+name:name}
+
+};
+};
+const createclaim=(name,amountofmoney)=>{
+return{
+type:'createclaim',
+payload:{
+name:name,
+amountofmoney:amountofmoney
+}
+};
+};
+
+
+const claimshistory=(oldlist=[],action)=>{
+
+if(action.type === 'createclaim')
+{
+return [...oldlist,action.payload];
+}
+return oldlist;
+
+};
+
+
+const accounting=(bagofmoney=100 ,action)=>
+{
+if(action.type==='createclaim')
+{
+  return bagofmoney-action.payload.amountofmoney;
+}
+else if(action.type==='createpolicy')
+{
+return bagofmoney+action.payload.amount;
+}
+};
+
+
+const policies=(listofpolicies=[],action)=>{
+if(action.type==='createpolicy')
+{
+return [...listofpolicies,action.payload.name];
+
+}
+else if(action.type==='deletepolicy')
+{
+return listofpolicies.filter(name=> name!==action.payload.name);
+}
+return listofpolicies;
+
+
+};
+
+
+
+

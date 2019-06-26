@@ -143,3 +143,106 @@ ReactDOM.render(
 
 
 export default Handle;
+
+
+
+/*class Search extends React.Component {
+
+  inputText = React.createRef();
+  componentDidMount() {    this.inputText.current.focus()
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.inputText} placeholder="search" />      </div>
+
+    )
+  }
+
+}*/
+
+class Login extends React.Component{
+
+  state = {
+      username:null,
+      password:null
+  }
+ 
+  handleSubmit=(e)=>{
+  
+ 
+     this.setState({
+         username:this.refusername.value,
+         password:this.refpassword.value
+         
+     })
+     
+  }
+ 
+       render(){
+           return (
+            <form>
+            <input type="text"      ref ={name=>this.refusername=name } />
+            <input type="password"  ref= {pass=>this.refpassword=pass }  />
+            <button onClick={this.handleSubmit}>Login</button>
+            </form>
+           )
+       }
+ 
+ }
+export default Login;
+
+
+
+
+
+/*class Search extends React.Component {
+
+  inputText = React.createRef();
+  componentDidMount() {    this.inputText.current.focus()
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.inputText} placeholder="search" />      </div>
+
+    )
+  }
+
+}*/
+
+class Login extends React.Component{
+
+  state = {
+      username:null,
+      password:null
+  }
+ 
+  handleSubmit=(e)=>{
+  
+ 
+     this.setState({
+         username:this.refusername.value,
+         password:this.refpassword.value
+         
+     })
+     
+  }
+ 
+       render(){
+           return (
+            <form>
+            <input type="text"      ref ={name=>this.refusername=name } />
+            <input type="password"  ref= {pass=>this.refpassword=pass }  />
+            <button onClick={this.handleSubmit}>Login</button>
+            </form>
+           )
+       }
+ 
+ }
+export default Login;
+
+
+
